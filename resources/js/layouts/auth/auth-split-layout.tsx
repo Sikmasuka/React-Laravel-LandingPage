@@ -1,7 +1,6 @@
-import AppLogoIcon from '@/components/app-logo-icon';
 import ParticleBackground from '@/components/particle-bg';
-import { home } from '@/routes';
 import { Link } from '@inertiajs/react';
+import { Cpu } from 'lucide-react';
 import { type PropsWithChildren } from 'react';
 
 interface AuthLayoutProps {
@@ -28,12 +27,17 @@ export default function AuthSplitLayout({
                 {/* Header Section: Logo & Titles */}
                 <div className="mb-8 flex flex-col items-center gap-2 text-center">
                     <Link
-                        href={home()}
-                        className="flex flex-col items-center gap-2 font-medium text-white transition-opacity hover:opacity-80"
+                        href={'/'}
+                        // ADDED 'group' here so the children know when to animate
+                        className="group flex flex-col items-center gap-2 font-medium text-white transition-opacity hover:opacity-100"
                     >
-                        {/* Glassy Logo Container */}
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20 backdrop-blur-sm">
-                            <AppLogoIcon className="size-8 fill-current text-white" />
+                        {/* Icon Container */}
+                        <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 transition-all duration-300 group-hover:bg-cyan-500/10 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:ring-cyan-400/50">
+                            {/* Lucide Icon */}
+                            <Cpu
+                                className="h-6 w-6 text-cyan-400 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-180"
+                                strokeWidth={2.5}
+                            />
                         </div>
                     </Link>
 

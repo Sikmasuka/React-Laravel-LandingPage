@@ -18,7 +18,12 @@ export default function Register() {
         >
             <Head title="Register" />
 
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-6 shadow-[0_0_40px_-10px_rgba(168,85,247,0.2)] backdrop-blur-md">
+            {/* Decorative Glows (Matched to Cyan/Blue Theme) */}
+            <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+            <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[100px]"></div>
+
+            {/* Card Container - Cyan Shadow */}
+            <div className="rounded-2xl border border-white/10 bg-black/40 p-6 shadow-[0_0_40px_-10px_rgba(34,211,238,0.2)] backdrop-blur-md">
                 <Form
                     {...store.form()}
                     resetOnSuccess={['password', 'password_confirmation']}
@@ -28,6 +33,7 @@ export default function Register() {
                     {({ processing, errors }) => (
                         <>
                             <div className="grid gap-6">
+                                {/* Name Input */}
                                 <div className="grid gap-2">
                                     <Label
                                         htmlFor="name"
@@ -44,7 +50,8 @@ export default function Register() {
                                         autoComplete="name"
                                         name="name"
                                         placeholder="Full name"
-                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500/20"
+                                        // FIXED: Focus colors to Cyan
+                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-cyan-500/20"
                                     />
                                     <InputError
                                         message={errors.name}
@@ -52,6 +59,7 @@ export default function Register() {
                                     />
                                 </div>
 
+                                {/* Email Input */}
                                 <div className="grid gap-2">
                                     <Label
                                         htmlFor="email"
@@ -67,11 +75,13 @@ export default function Register() {
                                         autoComplete="email"
                                         name="email"
                                         placeholder="email@example.com"
-                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500/20"
+                                        // FIXED: Focus colors to Cyan
+                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-cyan-500/20"
                                     />
                                     <InputError message={errors.email} />
                                 </div>
 
+                                {/* Password Input */}
                                 <div className="grid gap-2">
                                     <Label
                                         htmlFor="password"
@@ -87,11 +97,13 @@ export default function Register() {
                                         autoComplete="new-password"
                                         name="password"
                                         placeholder="Password"
-                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500/20"
+                                        // FIXED: Focus colors to Cyan
+                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-cyan-500/20"
                                     />
                                     <InputError message={errors.password} />
                                 </div>
 
+                                {/* Confirm Password Input */}
                                 <div className="grid gap-2">
                                     <Label
                                         htmlFor="password_confirmation"
@@ -107,16 +119,19 @@ export default function Register() {
                                         autoComplete="new-password"
                                         name="password_confirmation"
                                         placeholder="Confirm password"
-                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-purple-500 focus:ring-purple-500/20"
+                                        // FIXED: Focus colors to Cyan
+                                        className="border-white/10 bg-white/5 text-white placeholder:text-gray-500 focus:border-cyan-500 focus:ring-cyan-500/20"
                                     />
                                     <InputError
                                         message={errors.password_confirmation}
                                     />
                                 </div>
 
+                                {/* Submit Button */}
                                 <Button
                                     type="submit"
-                                    className="mt-2 w-full border-0 bg-gradient-to-r from-purple-600 to-orange-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300 hover:from-purple-500 hover:to-orange-500 hover:shadow-[0_0_25px_rgba(249,115,22,0.4)]"
+                                    // FIXED: Gradient to Cyan -> Blue, Shadow to Cyan
+                                    className="mt-2 w-full border-0 bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300 hover:from-cyan-500 hover:to-blue-500 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]"
                                     tabIndex={5}
                                     data-test="register-user-button"
                                 >
@@ -127,12 +142,14 @@ export default function Register() {
                                 </Button>
                             </div>
 
+                            {/* Login Link */}
                             <div className="text-center text-sm text-gray-400">
                                 Already have an account?{' '}
                                 <TextLink
-                                    href={login()}
+                                    href={login()} // Make sure to use login.url() if your routes file requires it
                                     tabIndex={6}
-                                    className="font-medium text-purple-400 transition-colors hover:text-orange-400"
+                                    // FIXED: Text colors to Cyan
+                                    className="font-medium text-cyan-400 transition-colors hover:text-cyan-300"
                                 >
                                     Log in
                                 </TextLink>
