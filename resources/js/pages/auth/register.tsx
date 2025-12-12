@@ -116,9 +116,11 @@ export default function Register() {
 
                                 <Button
                                     type="submit"
-                                    className="mt-2 w-full border-0 bg-gradient-to-r from-purple-600 to-orange-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300 hover:from-purple-500 hover:to-orange-500 hover:shadow-[0_0_25px_rgba(249,115,22,0.4)]"
+                                    // UPDATED: Gradient changed to Cyan->Blue, Shadows changed to Cyan
+                                    className="mt-2 w-full border-0 bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300 hover:from-cyan-500 hover:to-blue-500 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]"
                                     tabIndex={5}
                                     data-test="register-user-button"
+                                    disabled={processing} // Good practice to re-add disabled state while processing
                                 >
                                     {processing && (
                                         <Spinner className="text-white" />
@@ -132,7 +134,7 @@ export default function Register() {
                                 <TextLink
                                     href={login()}
                                     tabIndex={6}
-                                    className="font-medium text-purple-400 transition-colors hover:text-orange-400"
+                                    className="text-cyan font-medium transition-colors hover:text-cyan-400"
                                 >
                                     Log in
                                 </TextLink>

@@ -71,7 +71,7 @@ export default function AboutSection() {
 
                     {/* --- TEAM MEMBER 3 --- */}
                     <TeamCard
-                        image="/images/jm.jpg" // Note: You had JM's image here in your code, kept it as provided
+                        image="/images/mikay.jpg" // Note: You had JM's image here in your code, kept it as provided
                         name="Mechaela Abecia"
                         role="PM Assistant"
                         desc="Supports project planning and coordination, helping to track milestones and ensure team workflows run smoothly."

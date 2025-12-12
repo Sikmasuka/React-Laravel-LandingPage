@@ -1,6 +1,7 @@
 import { dashboard, login, register } from '@/routes';
 import { type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
+import { Cpu } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export default function HeaderSection({
@@ -63,12 +64,17 @@ export default function HeaderSection({
             >
                 {/* Logo */}
                 <Link
-                    href="/"
-                    className="group relative z-50 flex items-center gap-3"
+                    href={'/'}
+                    // ADDED 'group' here so the children know when to animate
+                    className="group flex items-center gap-2 font-medium text-white transition-opacity hover:opacity-100"
                 >
-                    <div className="relative flex h-8 w-8 items-center justify-center">
-                        <div className="absolute inset-0 animate-ping rounded-full bg-cyan-500 opacity-20"></div>
-                        <div className="h-3 w-3 rounded-full bg-cyan-400 shadow-[0_0_15px_#22d3ee]"></div>
+                    {/* Icon Container */}
+                    <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 transition-all duration-300 group-hover:bg-cyan-500/10 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:ring-cyan-400/50">
+                        {/* Lucide Icon */}
+                        <Cpu
+                            className="h-6 w-6 text-cyan-400 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-180"
+                            strokeWidth={2.5}
+                        />
                     </div>
                     <h1 className="text-xl font-bold tracking-[0.2em] text-white">
                         GROUP<span className="text-cyan-400">4</span>
