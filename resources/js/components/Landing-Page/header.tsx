@@ -1,6 +1,10 @@
 import { dashboard, login, register } from '@/routes';
 import { type SharedData } from '@/types';
+<<<<<<< HEAD
 import { Link, router, usePage } from '@inertiajs/react';
+=======
+import { Link, usePage } from '@inertiajs/react';
+>>>>>>> 95d004390b3faea90852be2e70e00979615c4bd6
 import { Cpu } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -67,8 +71,9 @@ export default function HeaderSection({
                 } `}
             >
                 <Link
-                    href="/"
-                    className="group relative z-50 flex items-center gap-3"
+                    href={'/'}
+                    // ADDED 'group' here so the children know when to animate
+                    className="group flex items-center gap-2 font-medium text-white transition-opacity hover:opacity-100"
                 >
                     {/* Icon Container */}
                     <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 transition-all duration-300 group-hover:bg-cyan-500/10 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] group-hover:ring-cyan-400/50">

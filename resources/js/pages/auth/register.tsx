@@ -134,6 +134,7 @@ export default function Register() {
                                     className="mt-2 w-full border-0 bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all duration-300 hover:from-cyan-500 hover:to-blue-500 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]"
                                     tabIndex={5}
                                     data-test="register-user-button"
+                                    disabled={processing} // Good practice to re-add disabled state while processing
                                 >
                                     {processing && (
                                         <Spinner className="text-white" />
@@ -148,8 +149,8 @@ export default function Register() {
                                 <TextLink
                                     href={login()} // Make sure to use login.url() if your routes file requires it
                                     tabIndex={6}
+                                    className="text-cyan font-medium transition-colors hover:text-cyan-400"
                                     // FIXED: Text colors to Cyan
-                                    className="font-medium text-cyan-400 transition-colors hover:text-cyan-300"
                                 >
                                     Log in
                                 </TextLink>
